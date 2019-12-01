@@ -1,9 +1,19 @@
 # multithread
-For compiling
+program to measure the time needed to calculate the number of prime numbers between 1 and 10.000.000
+
+For compiling single-thread source code
 ```bash
-  gcc main.c -lpthread -lm -o main
+  gcc single.c -lpthread -lm -o single
 ```
-For running
+For running single-thread source code
 ```bash
-  ./main
+  ./single
+```
+For compiling double-thread source code
+```bash
+  gcc double.c -lpthread -lm -o double
+```
+For running double-thread source code
+```bash
+  ./double
 ```

@@ -17,3 +17,11 @@ For running double-thread source code
 ```bash
   ./double
 ```
+For compiling quad-thread source code
+```bash
+  gcc quad.c -lpthread -lm -o quad
+```
+For running quad-thread source code
+```bash
+  ./quad
+```

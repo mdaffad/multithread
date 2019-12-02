@@ -126,7 +126,7 @@ void *getPrime4 (void *input)
 		}
 		if (true)
 		{
-			prime3++;
+			prime4++;
 		}
 	}
 	return NULL;

@@ -1,0 +1,125 @@
+onlinegdb.com
+Linux Check 5.1.17-x86_64-linode128 #1 SMP PREEMPT Wed Jul 10 17:11:49 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    1
+Core(s) per socket:    1
+Socket(s):             4
+NUMA node(s):          1
+Vendor ID:             AuthenticAMD
+CPU family:            23
+Model:                 1
+Stepping:              2
+CPU MHz:               2000.000
+BogoMIPS:              4001.66
+Hypervisor vendor:     KVM
+Virtualization type:   full
+L1d cache:             64K
+L1i cache:             64K
+L2 cache:              512K
+L3 cache:              16384K
+NUMA node0 CPU(s):     0-3
+
+Single
+prime : 664579
+time : 7.430051
+
+prime : 664579
+time : 7.047814
+
+
+double
+prime : 664579
+time : 7.141939
+
+prime : 664579
+time : 7.407128
+
+
+repl.it
+Linux 0f79227b5cf4 4.15.0-1036-gcp #38~16.04.1-Ubuntu SMP Tue Jun 25 15:30:46 UTC 2019 x86_64 GNU/Linux
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                4
+On-line CPU(s) list:   0-3
+Thread(s) per core:    2
+Core(s) per socket:    2
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 63
+Model name:            Intel(R) Xeon(R) CPU @ 2.30GHz
+Stepping:              0
+CPU MHz:               2300.000
+BogoMIPS:              4600.00
+Hypervisor vendor:     KVM
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              46080K
+NUMA node0 CPU(s):     0-3
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gbrdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm invpcid_single pti ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt arat md_clear arch_capabilities
+
+Single
+prime : 664579
+time : 11.463597
+
+prime : 664579
+time : 11.052089
+
+Double
+prime : 664579
+time : 11.056225
+
+prime : 664579
+time : 11.523070
+
+Linux mdaffad 4.15.0-54-generic #58-Ubuntu SMP Mon Jun 24 10:55:24 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              4
+On-line CPU(s) list: 0-3
+Thread(s) per core:  2
+Core(s) per socket:  2
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               61
+Model name:          Intel(R) Core(TM) i3-5010U CPU @ 2.10GHz
+Stepping:            4
+CPU MHz:             1860.668
+CPU max MHz:         2000,0000
+CPU min MHz:         500,0000
+BogoMIPS:            4190.07
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            3072K
+NUMA node0 CPU(s):   0-3
+
+Single
+prime : 664579
+time : 11.252694
+
+prime : 664579
+time : 11.279756
+
+double
+prime : 664579
+time : 11.159941
+
+prime : 664579
+time : 11.188459
+
+
+
+

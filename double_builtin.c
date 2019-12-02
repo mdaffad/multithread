@@ -5,7 +5,6 @@
 #include <sys/time.h> 
 long prime = 0;
 long prime2 = 0;
-int wait = 0, wait2 = 0;
 struct numbers {
    int start;
    unsigned long end;
@@ -17,10 +16,6 @@ void *getPrime (void *input)
 	copy_start = ((struct numbers *) input)->start;
 	check = ((struct numbers *) input)->end;
 	int true;
-	while (!wait)
-	{
-
-	}
 	for (j = copy_start; j <= check; j = j + 4)
 	{
 		numsqrt = (unsigned long) (sqrt(j));
@@ -41,7 +36,6 @@ void *getPrime (void *input)
 			prime++;
 		};
 	}
-	wait = 0;
 	return NULL;
 }
 void *getPrime2 (void *input)
@@ -51,10 +45,7 @@ void *getPrime2 (void *input)
 	copy_start = ((struct numbers *) input)->start;
 	check = ((struct numbers *) input)->end;
 	int true;
-	while (!wait2)
-	{
-
-	}
+	// start_num += 
 	for (j = copy_start; j <= check; j = j + 4)
 	{
 		numsqrt = (unsigned long) (sqrt(j));
@@ -75,7 +66,6 @@ void *getPrime2 (void *input)
 			prime2++;
 		}
 	}
-	wait2 = 0;
 	return NULL;
 }
 
@@ -90,34 +80,27 @@ int main()
 	thread1.end = end;
 	thread2.start = 5;
 	thread2.end = end;
-	pthread_t tid1, tid2;
 	struct timespec start_time, end_time;
-
-	
-	// printf("time : %f \n", (double)start_time);
-	pthread_create(&tid1, NULL, getPrime, (void *) &thread1);
-	pthread_create(&tid2, NULL, getPrime2, (void *) &thread2);
-	clock_gettime(CLOCK_MONOTONIC, &start_time); 
-	wait = 1;
-	wait2 = 1;
+	pthread_t tid1, tid2;
 	if (thread1.start > 1)
 	{
 		prime++;
 		
-		while (wait | wait2)
-		{
-			// end_time = clock();
-		}
-		
+		clock_gettime(CLOCK_MONOTONIC, &start_time); 
+		pthread_create(&tid1, NULL, getPrime, (void *) &thread1);
+		pthread_create(&tid2, NULL, getPrime2, (void *) &thread2);
+		pthread_join(tid1, NULL);
+		pthread_join(tid2, NULL);
 	}
 	clock_gettime(CLOCK_MONOTONIC, &end_time); 
-	// printf("start : %f end : %f ",(double) start_time,(double) end_time);
 	double cpu_time_used;
 	cpu_time_used = (end_time.tv_sec - start_time.tv_sec) * 1e9; 
     cpu_time_used = (cpu_time_used + (end_time.tv_nsec - start_time.tv_nsec)) * 1e-9; 
+	
 	/*end count time*/
 	prime = prime + prime2;
 	printf("prime : %ld\n", prime);
 	printf("time : %.10f\n", cpu_time_used);
+	pthread_exit(NULL); 
 	return 0;
 }

@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <pthread.h> 
-#include <time.h> 
-#include <unistd.h>
+#include <sys/time.h> 
 long prime = 0;
 long prime2 = 0;
 long prime3 = 0;
@@ -71,14 +70,14 @@ void *getPrime2 (void *input)
 	}
 	return NULL;
 }
+
 void *getPrime3 (void *input)
 {
 	unsigned long j, i, numsqrt, check;
 	int copy_start;
 	copy_start = ((struct numbers *) input)->start;
 	check = ((struct numbers *) input)->end;
-	int true;
-	// start_num += 
+	int true; 
 	for (j = copy_start; j <= check; j = j + 8)
 	{
 		numsqrt = (unsigned long) (sqrt(j));
@@ -136,8 +135,6 @@ int main()
 {
 	struct numbers thread1;
 	struct numbers thread2;
-    struct numbers thread3;
-    struct numbers thread4;
 
 	/*start count time*/
 	unsigned long end = 10000000;
@@ -145,32 +142,31 @@ int main()
 	thread1.end = end;
 	thread2.start = 5;
 	thread2.end = end;
-    thread2.start = 7;
-	thread2.end = end;
-    thread2.start = 9;
-	thread2.end = end;
-	clock_t start_time, end_time;
+	struct timespec start_time, end_time;
 	pthread_t tid1, tid2, tid3, tid4;
 	if (thread1.start > 1)
 	{
 		prime++;
 		
-		start_time = clock();
+		clock_gettime(CLOCK_MONOTONIC, &start_time); 
 		pthread_create(&tid1, NULL, getPrime, (void *) &thread1);
 		pthread_create(&tid2, NULL, getPrime2, (void *) &thread2);
-        pthread_create(&tid3, NULL, getPrime3, (void *) &thread3);
-        pthread_create(&tid4, NULL, getPrime4, (void *) &thread4);
+		pthread_create(&tid3, NULL, getPrime2, (void *) &thread2);
+		pthread_create(&tid4, NULL, getPrime2, (void *) &thread2);
 		pthread_join(tid1, NULL);
 		pthread_join(tid2, NULL);
-        pthread_join(tid3, NULL);
-        pthread_join(tid4, NULL);
-		end_time = clock();
+		pthread_join(tid3, NULL);
+		pthread_join(tid4, NULL);
 	}
-	double cpu_time_used = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
+	clock_gettime(CLOCK_MONOTONIC, &end_time); 
+	double cpu_time_used;
+	cpu_time_used = (end_time.tv_sec - start_time.tv_sec) * 1e9; 
+    cpu_time_used = (cpu_time_used + (end_time.tv_nsec - start_time.tv_nsec)) * 1e-9; 
+	
 	/*end count time*/
-	prime = prime + prime2 + prime3 + prime4;
+	prime = prime + prime2+ prime3 + prime4;
 	printf("prime : %ld\n", prime);
-	printf("time : %f\n", cpu_time_used);
+	printf("time : %.10f\n", cpu_time_used);
 	pthread_exit(NULL); 
 	return 0;
 }

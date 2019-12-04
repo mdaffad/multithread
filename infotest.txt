@@ -80,8 +80,7 @@ time : 11.056225
 prime : 664579
 time : 11.523070
 
-//builtin
-Linux mdaffad 4.15.0-54-generic #58-Ubuntu SMP Mon Jun 24 10:55:24 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+Linux Ubuntu
 Architecture:        x86_64
 CPU op-mode(s):      32-bit, 64-bit
 Byte Order:          Little Endian
@@ -127,6 +126,7 @@ time : 11.251831
 prime : 664579
 time : 11.254807
 
+avg : 11.2455738
 
 double_builtin
 prime : 664579
@@ -148,6 +148,7 @@ double_builtin
 prime : 664579
 time : 5.9149542720
 
+avg : 5.9009361280
 
 quad_builtin
 prime : 634475
@@ -169,6 +170,56 @@ quad_builtin
 prime : 662623
 time : 4.0887920320
 
+avg : 4.0711348834
+
+
+Linux Ubuntu
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              4
+On-line CPU(s) list: 0-3
+Thread(s) per core:  2
+Core(s) per socket:  2
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           GenuineIntel
+CPU family:          6
+Model:               142
+Model name:          Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
+Stepping:            9
+CPU MHz:             500.022
+CPU max MHz:         3500,0000
+CPU min MHz:         400,0000
+BogoMIPS:            5808.07
+Virtualization:      VT-x
+L1d cache:           32K
+L1i cache:           32K
+L2 cache:            256K
+L3 cache:            4096K
+NUMA node0 CPU(s):   0-3
+
+single_builtin
+single buillin prine: 654579 ttne : 6.695121
+single builtin prine: t64579 tine : 6.610812 
+/single_builtin prine : v04579 tine : 6.627617
+single_builtin prine : 664579 Line : 6.6O8522 
+single builtin prtne : 661579 Line : 6.607784
+avg : 6612037,2
+
+double_builtin prime : time :3.3217990050
+double_builtin prime : time :3.3243036220
+double_builtin prime : time :3.3164922470
+double_builtin prime : time :3.4170895190
+double_builtin prime : time :3.3263531110
+avg : 3.3412075008
+
+quad_builtin prime : time :1.9690189960
+quad_builtin prime : time :1.9817089810
+quad_builtin prime : time :1.9770541790
+quad_builtin prime : time :2.0013749220
+quad_builtin prime : time :1.9870331000
+avg : 1.9832380356
 
 
 

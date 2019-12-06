@@ -1,4 +1,7 @@
 # multithread
+
+Muhammad Daffa Dinaya / 13518141
+Matematika Diskrit IF2120
 program to measure the time needed to calculate the number of prime numbers between 1 and 10.000.000
 
 For compiling single-thread source code

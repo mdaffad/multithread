@@ -157,6 +157,7 @@ int main()
 		pthread_join(tid2, NULL);
 		pthread_join(tid3, NULL);
 		pthread_join(tid4, NULL);
+		prime = prime + prime2+ prime3 + prime4;
 	}
 	clock_gettime(CLOCK_MONOTONIC, &end_time); 
 	double cpu_time_used;
@@ -164,7 +165,7 @@ int main()
     cpu_time_used = (cpu_time_used + (end_time.tv_nsec - start_time.tv_nsec)) * 1e-9; 
 	
 	/*end count time*/
-	prime = prime + prime2+ prime3 + prime4;
+	
 	printf("prime : %ld\n", prime);
 	printf("time : %.10f\n", cpu_time_used);
 	pthread_exit(NULL); 
